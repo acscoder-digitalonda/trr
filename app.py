@@ -48,7 +48,7 @@ knapsack_s = st.button("Tinh knapsack")
 if knapsack_s:
     values = values.split(" ")
     values = [int(x) for x in values]
-    weights = values.split(" ")
+    weights = weights.split(" ")
     weights = [int(x) for x in weights]
     ss = knapsack(values, weights, int(W))
 
