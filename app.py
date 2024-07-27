@@ -6,10 +6,10 @@ to_hop = st.text_input("C",key="to_hop")
 to_hop_s = st.button("Tinh to hop")
 if to_hop_s:
     t = to_hop.split(" ")
-    if t.len() > 1:
+    if len(t) > 1:
         C = 0
         for i in t[1:]:
-            C += math.comb(t[0], i)
+            C += math.comb(int(t[0]), int(i))
         st.write(C)
 
 st.subheader("Chinh hop")
@@ -18,14 +18,13 @@ chinh_hop_s = st.button("Tinh chinh hop")
 if chinh_hop_s:
     t = chinh_hop.split(" ")
     if t.len() == 1:
-        A = math.perm(t[0])
-    elif t.len() > 1:   
+        A = math.perm(int(t[0]))
+    elif len(t) > 1:   
         A = 0
         for i in t[1:]:
-            A += math.perm(t[0], i)
+            A += math.perm(int(t[0]), int(i))
     st.write(A)
  
-
 def knapsack(values, weights, W):
     N = len(values)
     K = [[0 for x in range(W + 1)] for x in range(N + 1)]
@@ -48,7 +47,9 @@ W = st.text_input("",key="ct_W")
 knapsack_s = st.button("Tinh knapsack")
 if knapsack_s:
     values = values.split(" ")
+    values = [int(x) for x in values]
     weights = values.split(" ")
-    ss = knapsack(values, weights, W)
+    weights = [int(x) for x in weights]
+    ss = knapsack(values, weights, int(W))
 
   
