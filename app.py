@@ -17,7 +17,7 @@ chinh_hop = st.text_input("A",key="chinh_hop")
 chinh_hop_s = st.button("Tinh chinh hop")
 if chinh_hop_s:
     t = chinh_hop.split(" ")
-    if t.len() == 1:
+    if len(t) == 1:
         A = math.perm(int(t[0]))
     elif len(t) > 1:   
         A = 0
